@@ -1,0 +1,12 @@
+services:
+  trailer-search-service:
+    container_name: trailer-search-service
+    build: .
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+    env_file:
+      - .env
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    restart: unless-stopped
